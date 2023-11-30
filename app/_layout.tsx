@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -46,11 +47,18 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+        <Stack.Screen name="index" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="login" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="signup" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="otp" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="forgotPassword" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="resetPassword" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
     </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
