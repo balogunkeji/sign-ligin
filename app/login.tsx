@@ -20,14 +20,14 @@ const SignIn = () => {
         <Text style={{alignSelf: 'flex-end', justifyContent: 'flex-start', fontSize: 12, fontWeight: '600'}} onPress={() => router.push('/forgotPassword')}>Forgot password</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            onPress={() => console.log('helo')}
+            onPress={() => router.push('/dashboard')}
             style={[styles.button, styles.btn1]}
           >
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => console.log('helo')}
+            onPress={() => router.push('/dashboard')}
             style={[styles.button, styles.btn2]}
           >
             <Text style={[styles.buttonText, {color: '#000'}]}>Login with google</Text>

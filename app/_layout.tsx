@@ -3,7 +3,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { useColorScheme } from 'react-native';
+import { StatusBar, useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export {
@@ -49,6 +49,7 @@ function RootLayoutNav() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <StatusBar backgroundColor={'red'} barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}/>
       <Stack>
         <Stack.Screen name="index" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
         <Stack.Screen name="login" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
@@ -56,6 +57,7 @@ function RootLayoutNav() {
         <Stack.Screen name="otp" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
         <Stack.Screen name="forgotPassword" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
         <Stack.Screen name="resetPassword" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
+        <Stack.Screen name="dashboard" options={{ headerShadowVisible: false, headerStyle: { backgroundColor: '#fff' }, headerTitle: '', headerShown: false}} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
